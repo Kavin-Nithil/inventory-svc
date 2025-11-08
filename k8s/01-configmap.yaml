@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: inventory-config
+  namespace: inventory-service
+data:
+  DB_NAME: "inventory_db"
+  DB_HOST: "postgres-service.database.svc.cluster.local"
+  DB_PORT: "5432"
+  RABBITMQ_HOST: "inventory-rabbitmq"
+  RABBITMQ_PORT: "5672"
+  DEBUG: "False"
+  RESERVATION_TIMEOUT_MINUTES: "15"
+  LOW_STOCK_THRESHOLD: "10"
