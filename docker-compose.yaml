@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  backend:
+    build: .
+    container_name: django-backend
+    command: gunicorn --workers 4 --bind 0.0.0.0:9003 main.wsgi:application
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "9003:9003"
+    volumes:
+      - .:/app
+    env_file:
+      - config.env
+    networks:
+      - shared-net
+
+networks:
+  shared-net:
+    external: true

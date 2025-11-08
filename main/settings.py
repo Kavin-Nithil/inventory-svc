@@ -137,7 +137,7 @@ DATABASES = {
         'CONN_MAX_AGE': 600,
         'OPTIONS': {
             'connect_timeout': 10,
-            'options': f"-c search_path={os.getenv('DB_SCHEMA', default='catalog')}",
+            'options': f"-c search_path={os.getenv('DB_SCHEMA', default='inventory')}",
         }
 
     }
