@@ -22,4 +22,4 @@ USER appuser
 
 EXPOSE 9003
 
-CMD ["gunicorn", "inventory_service.wsgi:application", "--bind", "0.0.0.0:9003", "--workers", "4"]
+CMD ["gunicorn", "main.wsgi:application", "--bind", "0.0.0.0:9003", "--workers", "4"]
