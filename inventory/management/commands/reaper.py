@@ -24,6 +24,7 @@ class Command(BaseCommand):
         while True:
             try:
                 count = InventoryService.reap_expired_reservations()
+                self.stdout.write(f'Count is {count}')
                 if count > 0:
                     self.stdout.write(f'Reaped {count} expired reservations')
                 time.sleep(interval)
