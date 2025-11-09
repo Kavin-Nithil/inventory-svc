@@ -28,6 +28,8 @@ services:
       - "rabbitmq:host-gateway"
     env_file:
       - config.env
+    volumes:
+      - .:/app
     networks:
       - shared-net
     restart: unless-stopped
